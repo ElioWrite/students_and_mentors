@@ -15,7 +15,19 @@ public class InitializeStateModel : StateModel
         UI.Panels.ShowPanelImmediately<PreloadPanelVM>();
 
         Debug.Log("Data caching");
+
         yield return new WaitForSeconds(1);
+        Root.Data.Students.FetchData();
+        Root.Data.Mentors.FetchData();
+
+        foreach (var item in Root.Data.Mentors.FetchedData)
+        {
+            foreach (var item2 in item.Required)
+            {
+                Debug.Log(item2.FullName);
+            }
+        }
+
         Debug.Log("Network connection check");
         yield return new WaitForSeconds(2);
 

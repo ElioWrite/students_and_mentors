@@ -1,0 +1,33 @@
+{"Mentors" :[
+ {
+   "Name": "Kirill Borisenko",
+   "Required": ["Mariia Shchepetkova", "Maksim Shchepetkov"],
+   "Excluded": []
+ },
+ {
+   "Name": "Vadim Zverev",
+   "Required": ["Ekaterina Borisenko"],
+   "Excluded": []
+ },
+ {
+   "Name": "Maksim Sperenkov",
+   "Required": ["Maksim Kulebiakin"],
+   "Excluded": []
+ },
+ {
+   "Name": "Dmitrii Frolov",
+   "Required": [],
+   "Excluded": ["Aleksandr Vikhrov", "Dmitrii Zuev"]
+ },
+ {
+   "Name": "Sergei Nesterov",
+   "Required": [],
+   "Excluded": []
+ },
+ {
+   "Name": "Sergei Sharapov",
+   "Required": [],
+   "Excluded": []
+ }
+]
+}

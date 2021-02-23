@@ -29,4 +29,12 @@ public class Root : MonoBehaviour
     [SerializeField]
     private StatesModel _statesModel;
     public StatesModel States => _statesModel;
+
+    [SerializeField]
+    private StudentsModel _studentsModel;
+    public StudentsModel Students => _studentsModel;
+
+    [SerializeField]
+    private MentorsModel _mentorsModel;
+    public MentorsModel Mentors => _mentorsModel;
 }
