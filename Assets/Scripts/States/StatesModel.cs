@@ -49,5 +49,7 @@ public enum StateCode
     Initialize = 10,
     Tutorial = 30,
     MainMenu = 40,
+    Reshuffle = 50,
+    Result = 60,
     Exiting = 100
 }

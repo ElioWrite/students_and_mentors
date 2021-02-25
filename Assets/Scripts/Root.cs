@@ -37,4 +37,8 @@ public class Root : MonoBehaviour
     [SerializeField]
     private MentorsModel _mentorsModel;
     public MentorsModel Mentors => _mentorsModel;
+
+    [SerializeField]
+    private ShufflesModel _shuffleModel;
+    public ShufflesModel Shuffle => _shuffleModel;
 }

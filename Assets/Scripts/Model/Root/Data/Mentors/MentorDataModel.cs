@@ -9,6 +9,8 @@ public class MentorDataModel
 
     public string Surname { get; private set; }
 
+    public string FullName => Name + " " + Surname;
+
     public IEnumerable<StudentDataModel> Required { get; private set; }
 
     public IEnumerable<StudentDataModel> Excluded { get; private set; }

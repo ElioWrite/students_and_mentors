@@ -20,18 +20,10 @@ public class InitializeStateModel : StateModel
         Root.Data.Students.FetchData();
         Root.Data.Mentors.FetchData();
 
-        foreach (var item in Root.Data.Mentors.FetchedData)
-        {
-            foreach (var item2 in item.Required)
-            {
-                Debug.Log(item2.FullName);
-            }
-        }
-
         Debug.Log("Network connection check");
         yield return new WaitForSeconds(2);
 
-        yield return Root.States.GoToStateCoroutine(StateCode.MainMenu);
+        yield return Root.States.GoToStateCoroutine(StateCode.Reshuffle);
     }
 
     public override IEnumerator OnStateEnding()
