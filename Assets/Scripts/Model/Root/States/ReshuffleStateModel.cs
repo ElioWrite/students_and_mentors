@@ -23,20 +23,28 @@ public class ReshuffleStateModel : StateModel
         foreach (var item in Root.Data.Mentors.FetchedData)
             AddRequiredToShuffle(item);
 
-        for(int i = 0; i < _readyToShuffleStudents.Count; i++)
+        var iteration = _readyToShuffleStudents.Count;
+
+        for (int i = 0; i < iteration; i++)
             AddToShuffle(Root.Shuffle.WeakestShuffleInSmallestTeam(HightscoredStudent), HightscoredStudent);
+            
 
-        foreach (var item in Root.Shuffle.Shuffles)
-        {
-            Debug.Log(item.Mentor.FullName);
-            Debug.Log(item.Students.Count());
-            Debug.Log(item.AverageMark);
+        //var count = 0;
 
-            foreach (var item2 in item.Students)
-            {
-                Debug.Log(item2.FullName);
-            }
-        }
+        //foreach (var item in Root.Shuffle.Shuffles)
+        //{
+        //    Debug.Log(item.Mentor.FullName);
+        //    Debug.Log(item.Students.Count());
+        //    count += item.Students.Count();
+        //    Debug.Log(item.AverageMark);
+
+        //    foreach (var item2 in item.Students)
+        //    {
+        //        Debug.Log(item2.FullName);
+        //    }
+        //}
+
+        //Debug.Log(count);
     }
 
     public override IEnumerator OnStateEnding()
@@ -51,13 +59,13 @@ public class ReshuffleStateModel : StateModel
         Root.Shuffle.AddStudentsToShuffle(mentor, mentor.Required);
 
         foreach (var req in mentor.Required)
-            _readyToShuffleStudents.Remove(req); 
+            _readyToShuffleStudents.Remove(_readyToShuffleStudents.FirstOrDefault(r => r.FullName == req.FullName)); 
     }
 
     private void AddToShuffle(MentorShuffleModel shuffle, StudentDataModel student)
     {
         shuffle.AddStudent(student);
 
-        _readyToShuffleStudents.Remove(student);
+        _readyToShuffleStudents.Remove(_readyToShuffleStudents.FirstOrDefault(r => r.FullName == student.FullName));
     }
 }
