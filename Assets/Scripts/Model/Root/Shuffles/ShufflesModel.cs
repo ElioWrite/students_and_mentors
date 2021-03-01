@@ -26,10 +26,28 @@ public class ShufflesModel : Model
     public MentorShuffleModel WeakestShuffle => _shuffles.OrderBy(s => s.AverageMark).FirstOrDefault();
 
     /// <summary>
+    /// Shuffle with the lowest average score, lowest count of student (priority) and haven't student in the rejected list
+    /// WARNING: returns NULL if system cannot find the mentor who can accept this student
+    /// </summary>
+    public MentorShuffleModel WeakestShuffleInSmallestTeam(StudentDataModel acceptedStudent)
+    {
+        var orderedByCount = _shuffles.OrderBy(s => s.StudentsCount);
+
+        var orderedByMark = _shuffles.OrderBy(s => s.AverageMark);
+
+        foreach (var item in orderedByCount)
+            foreach(var item2 in orderedByMark)
+                if (item.StudentsCount == item2.StudentsCount && !item.Mentor.Excluded.Contains(acceptedStudent))
+                    return item;   
+
+        return null;
+    }
+
+    /// <summary>
     /// Shuffle with the lowest average score and haven't student in the rejected list
     /// WARNING: returns NULL if system cannot find the mentor who can accept this student
     /// </summary>
-    public MentorShuffleModel WeakestShuffleAndStudentAccepted(StudentDataModel student)
+    private MentorShuffleModel WeakestShuffleAndStudentAccepted(StudentDataModel student)
     {
         var ordered = _shuffles.OrderBy(s => s.AverageMark);
 

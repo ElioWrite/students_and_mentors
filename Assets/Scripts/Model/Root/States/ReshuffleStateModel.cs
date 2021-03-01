@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -12,21 +13,24 @@ public class ReshuffleStateModel : StateModel
     {
         yield return base.OnStateBeginning();
 
-        _readyToShuffleStudents = new List<StudentDataModel>(Root.Data.Students.FetchedData);
+        // randomly shuffle FetchedStudentsData via Guid.NewGuid()
+        _readyToShuffleStudents = new List<StudentDataModel>(Root.Data.Students.FetchedData.OrderBy(a => Guid.NewGuid()));
 
-        Root.Shuffle.InitializeShuffles(Root.Data.Mentors.FetchedData);
+        // randomly shuffle FetchedMentorsData via Guid.NewGuid()
+        Root.Shuffle.InitializeShuffles(Root.Data.Mentors.FetchedData.OrderBy(a => Guid.NewGuid()));
 
         // assign recommended students to each mentor
         foreach (var item in Root.Data.Mentors.FetchedData)
             AddRequiredToShuffle(item);
 
         for(int i = 0; i < _readyToShuffleStudents.Count; i++)
-            AddToShuffle(Root.Shuffle.WeakestShuffleAndStudentAccepted(HightscoredStudent), HightscoredStudent);
+            AddToShuffle(Root.Shuffle.WeakestShuffleInSmallestTeam(HightscoredStudent), HightscoredStudent);
 
         foreach (var item in Root.Shuffle.Shuffles)
         {
             Debug.Log(item.Mentor.FullName);
             Debug.Log(item.Students.Count());
+            Debug.Log(item.AverageMark);
 
             foreach (var item2 in item.Students)
             {

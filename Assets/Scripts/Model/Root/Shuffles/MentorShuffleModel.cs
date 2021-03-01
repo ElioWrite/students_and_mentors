@@ -48,6 +48,8 @@ public class MentorShuffleModel
         _students = new List<StudentDataModel>();
     }
 
+    public int StudentsCount => _students.Count;
+
     public float AverageMark
     {
         get
