@@ -37,7 +37,7 @@ public class ShufflesModel : Model
 
         foreach (var item in orderedByCount)
             foreach(var item2 in orderedByMark)
-                if (item.StudentsCount == item2.StudentsCount && !item.Mentor.Excluded.Contains(acceptedStudent))
+                if (item.StudentsCount == item2.StudentsCount && !item.Mentor.Excluded.Any(a => a.FullName == acceptedStudent.FullName))
                     return item;   
 
         return null;

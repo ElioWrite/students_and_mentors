@@ -12,6 +12,10 @@ public class DataModel : Model
     [SerializeField]
     private MentorsDataModel _mentorsDataModel;
     public MentorsDataModel Mentors => _mentorsDataModel;
+
+    [SerializeField]
+    private ResultDataModel _resultDataModel;
+    public ResultDataModel Result => _resultDataModel;
 }
 
 public abstract class JsonDataModel : Model

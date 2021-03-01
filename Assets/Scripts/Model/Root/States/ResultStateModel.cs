@@ -7,7 +7,9 @@ public class ResultStateModel : StateModel
     {
         yield return base.OnStateBeginning();
 
-        UI.Panels.ShowPanel<MainMenuPanelVM>(TransitionCode.Alpha);
+        Root.Data.Result.WriteJsonResult(Root.Shuffle.Shuffles);
+
+        //UI.Panels.ShowPanel<MainMenuPanelVM>(TransitionCode.Alpha);
 
         // yield return Root.States.GoToStateCoroutine(StateCode.Introduction);
     }
@@ -16,6 +18,6 @@ public class ResultStateModel : StateModel
     {
         yield return base.OnStateEnding();
 
-        yield return UI.Panels.HidePanel<PreloadPanelVM>(TransitionCode.Alpha);
+        //yield return UI.Panels.HidePanel<PreloadPanelVM>(TransitionCode.Alpha);
     }
 }

@@ -1,0 +1,86 @@
+{
+    "Shuffles": [
+        {
+            "Name": "Maksim Sperenkov",
+            "Students": [
+                "Maksim Kulebiakin",
+                "Maksim Shkodin",
+                "Kristina Chernova",
+                "Ramil Fitkulin",
+                "Ivan Korolev",
+                "Fedor Kartashov",
+                "Oleg Vodolagin",
+                "Artem Bitiutskii"
+            ],
+            "AverageScore": 3.262500047683716
+        },
+        {
+            "Name": "Sergei Nesterov",
+            "Students": [
+                "Aleksandr Gerasimov",
+                "Kristina Surkova",
+                "Anton Pronin",
+                "Aleksandr Polikarpov",
+                "Viktor Tsabovslii",
+                "Kirill Latanov",
+                "Aleksandr Vasin",
+                "Aleksandr Vikhrov"
+            ],
+            "AverageScore": 3.262500047683716
+        },
+        {
+            "Name": "Sergei Sharapov",
+            "Students": [
+                "Andrei Bednov",
+                "Dmitrii Zuev",
+                "Mark Gaplievskii",
+                "Mikhail Rodin",
+                "Vladislav Ermishin",
+                "Stepan Savinov",
+                "Egor Volkov",
+                "Iaroslav Koledin"
+            ],
+            "AverageScore": 3.25
+        },
+        {
+            "Name": "Dmitrii Frolov",
+            "Students": [
+                "Dmitrii Kuzmin",
+                "Irina Andreeva",
+                "Daria Sokolova",
+                "Ivan Pavlov",
+                "Artem Shumilin",
+                "Nikita Berezkin",
+                "Tatiana Isaeva",
+                "Iurii Shigontsev"
+            ],
+            "AverageScore": 3.25
+        },
+        {
+            "Name": "Kirill Borisenko",
+            "Students": [
+                "Mariia Shchepetkova",
+                "Maksim Shchepetkov",
+                "Daniil Boitsov",
+                "Roman Statsura",
+                "Timofei Gusev",
+                "Rinat Davydov",
+                "Daniil Gievoi"
+            ],
+            "AverageScore": 3.2285714149475099
+        },
+        {
+            "Name": "Vadim Zverev",
+            "Students": [
+                "Ekaterina Borisenko",
+                "Aleksandr Goriachkin",
+                "Georgii Korogodov",
+                "Vladimir Ermukhanov",
+                "Roman Bashkatov",
+                "Vladimir Olkhov",
+                "Mikhail Guzeev"
+            ],
+            "AverageScore": 3.2285714149475099
+        }
+    ]
+}

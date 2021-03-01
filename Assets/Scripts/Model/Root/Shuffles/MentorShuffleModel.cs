@@ -61,4 +61,10 @@ public class MentorShuffleModel
         
     }
 
+    public MentorShuffleJsonDataModel ToJsonModel => new MentorShuffleJsonDataModel()
+    {
+        Name = this.Mentor.FullName,
+        AverageScore = AverageMark,
+        Students = this.Students.Select(s => s.FullName).ToArray()
+    };
 }

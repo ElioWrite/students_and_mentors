@@ -40,4 +40,6 @@ public class StudentDataModel
     /// Creates a StudentData from StudentJsonData.
     /// </summary>
     public StudentDataModel(StudentJsonDataModel jsonModel) : this(jsonModel.Name, jsonModel.Score) { }
+
+    public StudentJsonDataModel ToJsonModel => new StudentJsonDataModel() { Name = this.FullName, Score = this.Mark };
 }

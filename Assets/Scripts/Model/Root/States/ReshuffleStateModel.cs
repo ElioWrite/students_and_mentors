@@ -27,7 +27,7 @@ public class ReshuffleStateModel : StateModel
 
         for (int i = 0; i < iteration; i++)
             AddToShuffle(Root.Shuffle.WeakestShuffleInSmallestTeam(HightscoredStudent), HightscoredStudent);
-            
+
 
         //var count = 0;
 
@@ -45,6 +45,8 @@ public class ReshuffleStateModel : StateModel
         //}
 
         //Debug.Log(count);
+
+        yield return Root.States.GoToStateCoroutine(StateCode.Result);
     }
 
     public override IEnumerator OnStateEnding()
